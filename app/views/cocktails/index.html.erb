@@ -1,14 +1,16 @@
-<div class='container'>
-  <div class='banner'>
-    <h1> All Cocktails</h1>
-  </div>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li>
-      <%=  cocktail.name  %>
-      <%= link_to 'Details', cocktail_path(cocktail) %>
-      <% end %>
-    </li>
-  </ul>
-  <%= link_to 'Create a new Cocktail', new_cocktail_path %>
+<div class='container-fluid'>
+  <div class='row justify-content-center'>
+    <div class='banner'>
+      <h1> All Cocktails</h1>
+    </div>
+    <ul class='cards display-grid mb-3'>
+      <% @cocktails.each do |cocktail| %>
+      <li>
+        <%=  cocktail.name  %>
+        <%= link_to 'Details', cocktail_path(cocktail) %>
+        <% end %>
+      </li>
+    </ul>
+    <%= link_to 'Create a new Cocktail', new_cocktail_path %>
+</div>
 </div>
