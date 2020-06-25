@@ -1,0 +1,14 @@
+.card {
+  height: 176px;
+  background-size: cover;
+  background-position: cover;
+  position: relative;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  text-shadow: 0 1px 3px (0,0,0,0.5)
+}

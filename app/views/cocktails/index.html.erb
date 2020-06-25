@@ -1,16 +1,17 @@
-<div class='container-fluid'>
-  <div class='row justify-content-center'>
-    <div class='banner'>
-      <h1> All Cocktails</h1>
-    </div>
-    <ul class='cards display-grid mb-3'>
-      <% @cocktails.each do |cocktail| %>
-      <li>
-        <%=  cocktail.name  %>
-        <%= link_to 'Details', cocktail_path(cocktail) %>
-        <% end %>
-      </li>
-    </ul>
-    <%= link_to 'Create a new Cocktail', new_cocktail_path %>
+<div class='banner container-fluid'>
+  <h1> Amy's Cocktails</h1>
 </div>
+<div class='container'>
+  <div class='row row-cols-1 row-cols-md-2'>
+    <% @cocktails.each do |cocktail| %>
+        <div class='col mb-4'>
+          <div class="card" style="background-image: url('https://source.unsplash.com/500x400/?<%= cocktail.name %>')">
+            <div class='card-description'>
+            <h2> <%= cocktail.name %> </h2>
+              <div> <%= link_to 'Details', cocktail_path(cocktail) %> </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>
