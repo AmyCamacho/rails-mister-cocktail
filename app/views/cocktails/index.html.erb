@@ -5,7 +5,11 @@
   <div class='row row-cols-1 row-cols-md-2'>
     <% @cocktails.each do |cocktail| %>
         <div class='col mb-4'>
-          <div class="card" style="background-image: url('https://source.unsplash.com/500x400/?<%= cocktail.name %>')">
+          <% if cocktail.photo.present? %>
+          <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+          <% else %>
+          <div class="card" style="background-image: url('https://source.unsplash.com/random/?<%= cocktail.name %>')">
+          <% end %>
             <div class='card-description'>
             <h2> <%= cocktail.name %> </h2>
               <div> <%= link_to 'Details', cocktail_path(cocktail) %> </div>
